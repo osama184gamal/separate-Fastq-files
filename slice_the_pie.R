@@ -1,12 +1,6 @@
 library(ShortRead)
-setwd("/home/osama-gamal/")
 
-
-r1_file <- "/mnt/mydata/data/2A1_CGATGT_L001_R1_001.fastq"
-r2_file <- "/mnt/mydata/data/2A1_CGATGT_L001_R2_001.fastq"
-
-reads_per_sample <- 100000
-
+seperate_fastq = function(r1_file ,r2_file, reads_per_sample ){
 output_dir <- "~/chunks"
 dir.create(output_dir, showWarnings = FALSE)
 
@@ -40,3 +34,11 @@ for (sample in sample_ids) {
 close(stream1)
 close(stream2)
 dir.exists("/mnt/mydata/project/chunks")
+
+}
+
+
+
+
+
+
