@@ -31,6 +31,6 @@ In this step we create index file we need for the aligner in other step.
 
 ### The main loop 
 In this section we have 3 tools
-- bwa as aligner 
+- bwa the aligner 
 - samtools to sort the data of the bam files
 - GATK to get the (adding read groups , mark duplicates , variant calling) 
