@@ -9,4 +9,8 @@ The code consists of one function with 4 arguments.
 - r2_file is the second read file
 - read_per_sample ==> is number of reads you want each file to contain
 - sample_file ==> file that contains synthisise sample ids 
- 
+
+### Output 
+- Two files (R1 - R2) named by the sample ids in sample_file 
+- Each file has the number of reads you have decided in read_per_sample argument
+
