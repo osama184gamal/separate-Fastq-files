@@ -20,7 +20,7 @@ The code consists of one function with 4 arguments.
 - Two files (R1 - R2) named by the sample ids in sample_file 
 - Each file has the number of reads you have decided in read_per_sample argument
 
-##Create VCF files:
+## Create VCF files:
 I wrote a bash script file consistes of  3 main sections every section has a job to do 
 
 ### Configuration:
