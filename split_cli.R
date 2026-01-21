@@ -1,8 +1,4 @@
-suppressPackageStartupMessages({
-  library(optparse)
-  source("slice_the_pie.R")
-  
-  })
+suppressMessages({source("slice_the_pie.R")})
 
 
 option_list <- list(

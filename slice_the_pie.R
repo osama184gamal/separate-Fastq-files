@@ -1,6 +1,7 @@
 suppressPackageStartupMessages({
   library(ShortRead)
   library(seqinr)
+  library(optparse)
 })
 
 
