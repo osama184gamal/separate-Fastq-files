@@ -1,12 +1,9 @@
-library(ShortRead)
-library(seqinr)
-
-# lines = length(readLines("/mnt/mydata/data/2A1_CGATGT_L001_R1_001.fastq"))
-# number_of_reads =  cat(lines/4)
-# print(lines/4)
+suppressPackageStartupMessages({
+  library(ShortRead)
+  library(seqinr)
+})
 
 
-library(ShortRead)
 
 seperate_fastq <- function(file, num_files) {
   
@@ -34,7 +31,7 @@ seperate_fastq <- function(file, num_files) {
   if (lines %% 4 != 0) stop("Invalid FASTQ format")
   
   reads <- lines / 4
-  reads_per_sample <- as.integer(reads / num_files)
+  reads_per_sample <-floor(reads / num_files)
   
   cat("Total reads:", reads, "\n")
   cat("Reads per split file:", reads_per_sample, "\n\n")
@@ -57,8 +54,8 @@ seperate_fastq <- function(file, num_files) {
     
     if (length(fq1) == 0) break
     
-    writeFastq(fq1, file.path(output_dir, paste0(sample, "_R1.fastq")))
-    writeFastq(fq2, file.path(output_dir, paste0(sample, "_R2.fastq")))
+    writeFastq(fq1, file.path(output_dir, paste0(sample, "_R1.fastq.gz")))
+    writeFastq(fq2, file.path(output_dir, paste0(sample, "_R2.fastq.gz")))
     
     cat("Written", sample, "with", length(fq1), "reads\n")
   }
@@ -68,7 +65,6 @@ seperate_fastq <- function(file, num_files) {
 }
 
 
-seperate_fastq("mk_vcf/hello.txt",   10)
 
 
 
