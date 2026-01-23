@@ -6,7 +6,7 @@ suppressPackageStartupMessages({
 
 
 
-seperate_fastq <- function(file, num_files) {
+seperate_fastq <- function(file, num_files , dir_name, suffix) {
   
   # Read FASTQ paths
   paths <- readLines(file)
@@ -38,10 +38,8 @@ seperate_fastq <- function(file, num_files) {
   cat("Reads per split file:", reads_per_sample, "\n\n")
   
   # -------- Prepare output --------
-  output_dir <- "~/chunk"
-  dir.create(output_dir, showWarnings = FALSE)
+  dir.create(dir_name, showWarnings = FALSE)
   
-  suffix <- "AGRF"
   sample_ids <- sprintf("XY%03d-%s", seq_len(num_files), suffix)
   
   # -------- Streaming --------
@@ -55,8 +53,8 @@ seperate_fastq <- function(file, num_files) {
     
     if (length(fq1) == 0) break
     
-    writeFastq(fq1, file.path(output_dir, paste0(sample, "_R1.fastq.gz")))
-    writeFastq(fq2, file.path(output_dir, paste0(sample, "_R2.fastq.gz")))
+    writeFastq(fq1, file.path(dir_name, paste0(sample, "_R1.fastq.gz")))
+    writeFastq(fq2, file.path(dir_name, paste0(sample, "_R2.fastq.gz")))
     
     cat("Written", sample, "with", length(fq1), "reads\n")
   }
