@@ -1,9 +1,11 @@
-suppressPackageStartupMessages({
-  library(ShortRead)
-  library(seqinr)
-  library(optparse)
-})
-
+requied_packages = c("ShortRead", "seqinr", "optparse")
+for (pack in requied_packages){
+  if(!require(pack , character.only = TRUE)){
+    install.packages(pack , repos = "https://cloud.r-project.org")
+  }
+suppressPackageStartupMessages(library(pack, character.only = TRUE))
+  
+  }
 
 
 seperate_fastq <- function(file, num_files , dir_name, suffix) {

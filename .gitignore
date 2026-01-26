@@ -3,3 +3,4 @@ test.txt
 output/
 .RData
 .Rhistory
+output_dir/
