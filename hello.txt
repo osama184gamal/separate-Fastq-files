@@ -1,2 +1,0 @@
-/mnt/mydata/data/2A1_CGATGT_L001_R1_001.fastq
-/mnt/mydata/data/2A1_CGATGT_L001_R2_001.fastq
