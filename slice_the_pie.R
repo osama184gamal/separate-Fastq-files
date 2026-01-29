@@ -1,11 +1,18 @@
-requied_packages = c("ShortRead", "seqinr", "optparse")
-for (pack in requied_packages){
-  if(!require(pack , character.only = TRUE)){
-    install.packages(pack , repos = "https://cloud.r-project.org")
-  }
-suppressPackageStartupMessages(library(pack, character.only = TRUE))
-  
-  }
+required_cran <- c("seqinr", "optparse")
+required_bioc <- c("ShortRead")
+
+for (p in required_cran) {
+  if (!requireNamespace(p, quietly = TRUE)) install.packages(p, repos = "https://cloud.r-project.org")
+  suppressPackageStartupMessages(library(p, character.only = TRUE))
+}
+
+if (!requireNamespace("BiocManager", quietly = TRUE)) {
+  install.packages("BiocManager", repos = "https://cloud.r-project.org")
+}
+for (p in required_bioc) {
+  if (!requireNamespace(p, quietly = TRUE)) BiocManager::install(p, ask = FALSE, update = FALSE)
+  suppressPackageStartupMessages(library(p, character.only = TRUE))
+}
 
 
 seperate_fastq <- function(file, num_files , dir_name, suffix) {
