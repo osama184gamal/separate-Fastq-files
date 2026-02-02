@@ -60,13 +60,26 @@ seperate_fastq <- function(file, num_files , dir_name, suffix) {
     fq1 <- yield(stream1)
     fq2 <- yield(stream2)
     
-    if (length(fq1) == 0) break
+    if (length(fq1) == 0 || length(fq2) == 0) break
     
     writeFastq(fq1, file.path(dir_name, paste0(sample, "_R1.fastq.gz")))
     writeFastq(fq2, file.path(dir_name, paste0(sample, "_R2.fastq.gz")))
     
     cat("Written", sample, "with", length(fq1), "reads\n")
+    }
+  
+  fq1_r = yield(stream1) 
+  fq2_r = yield(stream2)
+  
+  if(length(fq1_r) > 0 && length(fq2_r) > 0 ){
+    last_id <- sprintf("XY%03d-%s", num_files, suffix)
+    
+    writeFastq(fq1_r, file.path(dir_name, paste0(last_id, "_R1.fastq.gz")), mode="a")
+    writeFastq(fq2_r, file.path(dir_name, paste0(last_id, "_R2.fastq.gz")), mode="a")
+    
   }
+  
+  
   
   close(stream1)
   close(stream2)
