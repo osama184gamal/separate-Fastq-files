@@ -6,7 +6,7 @@ The data we are using in this project is synthetic and just created for specific
 
 ## READMANE workflow team WGS project:
 In the wgs pipline we need read files in fastq format and ref sequence genome in fasta format.
-But we want to sythisise the fastq files, so we download the read files from the genome in bottle.
+But we want to sythisise the fastq files, so we download the read files from the genome in a bottle.
 Then we need to split the files depends on the reads size.
 
 ## Seperate fastq files using R program:
