@@ -4,14 +4,31 @@ set -euo pipefail
 ############################
 # CONFIGURATION
 ############################
-THREADS=8
 
-FASTQ_DIR="/home/osama-gamal/chunks"
-PROJECT_DIR="/mnt/mydata/project"
-REF="${PROJECT_DIR}/GCF_000001405.40_GRCh38.p14_genomic.fna"
-GATK="/home/osama-gamal/gatk-4.5.0.0/gatk-package-4.5.0.0-local.jar"
+read -p "Write the number of threads you want to use" THREADS
+
+
+read -p "Write the path to your fastq files:" FASTQ_DIR
+
+read -p "Write the path to your project workspace:" PROJECT_DIR
+
+read -p "Write the reference genome file name:" Ref_genome
+
+
+
+REF="${PROJECT_DIR}/${Ref_genome}"
+
+
+
+
+echo "This is an example of the file i want you to insert ==> path/to_your/gatk-package-4.5.0.0-local.jar"
+
+read -p "Writ the path to your file to run gatk:" GATK
+
+
 
 BAM_DIR="${PROJECT_DIR}/bam"
+
 VCF_DIR="${PROJECT_DIR}/vcf"
 
 mkdir -p "${BAM_DIR}" "${VCF_DIR}"
@@ -91,3 +108,4 @@ for R1 in ${FASTQ_DIR}/*_R1.fastq; do
 done
 
 echo "ALL SAMPLES COMPLETED SUCCESSFULLY"
+

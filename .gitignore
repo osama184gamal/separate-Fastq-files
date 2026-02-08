@@ -4,3 +4,5 @@ output/
 .RData
 .Rhistory
 output_dir/
+count.sh
+edit.txt
