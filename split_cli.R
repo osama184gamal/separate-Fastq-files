@@ -12,7 +12,7 @@ suppressMessages(
 
 option_list <- list(
   make_option(c("-p", "--path"), type="character", help="File containing FASTQ paths"),
-  make_option(c("-n", "--number"), type="integer", default=1),
+  make_option(c("-n", "--number"), type="integer", default=1, help="Number of files you want to generate"),
   make_option(c("-d" , "--dir") , type = "character" , help = "Where you want your files"),
   make_option(c("-s","--suffix"),type = "character" , help = "The suffix or part of your patient name")
 )
