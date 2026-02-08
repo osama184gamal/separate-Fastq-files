@@ -23,7 +23,7 @@ REF="${PROJECT_DIR}/${Ref_genome}"
 
 echo "This is an example of the file i want you to insert ==> path/to_your/gatk-package-4.5.0.0-local.jar"
 
-read -p "Writ the path to your file to run gatk:" GATK
+read -p "Write the path to your file to run gatk:" GATK
 
 
 
