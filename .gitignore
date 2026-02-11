@@ -6,3 +6,11 @@ output/
 output_dir/
 count.sh
 edit.txt
+file.txt
+GRCh38.99-20260211T145920Z-1-001.zip
+GRCh38.99/
+fails.txt
+index/
+snpEff_genes.txt
+snpEff_summary.html
+test.sh
