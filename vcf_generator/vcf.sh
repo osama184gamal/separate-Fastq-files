@@ -12,7 +12,7 @@ read -p "Write the path to your fastq files:" FASTQ_DIR
 
 read -p "Write the path to your project workspace:" PROJECT_DIR
 
-read -p "Write the reference genome file name:" Ref_genome
+read -p "Write the  path reference genome file name:" Ref_genome
 
 read -p "Write the path of your snpEff.jar file:" Snpeff
 

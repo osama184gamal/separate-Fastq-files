@@ -74,8 +74,8 @@ seperate_fastq <- function(file, num_files , dir_name, suffix) {
   if(length(fq1_r) > 0 && length(fq2_r) > 0 ){
     last_id <- sprintf("XY%03d-%s", num_files, suffix)
     
-    writeFastq(fq1_r, file.path(dir_name, paste0(last_id, "_R1.fastq.gz")), mode="a")
-    writeFastq(fq2_r, file.path(dir_name, paste0(last_id, "_R2.fastq.gz")), mode="a")
+    writeFastq(fq1_r, file.path(dir_name, paste0(last_id, "_R1.fastq")), mode="a")
+    writeFastq(fq2_r, file.path(dir_name, paste0(last_id, "_R2.fastq")), mode="a")
     
   }
   

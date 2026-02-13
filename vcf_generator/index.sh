@@ -1,3 +1,11 @@
+read -p "Write you output directory for your indexing files:" index
+mkdir $index
+
+
+read -p "Write the path to your genome fna file:" REF
+read -p "Write the path to your file to run gatk:" GATK
+
+
 ############################
 # REFERENCE PREPARATION
 ############################
